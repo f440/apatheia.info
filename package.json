@@ -3,29 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
+    "dev": "eleventy --serve",
+    "build": "eleventy",
+    "start": "eleventy --serve",
     "new-post": "node ./lib/new-post.js"
   },
   "dependencies": {
     "date-fns": "^2.30.0",
-    "gray-matter": "^4.0.3",
-    "next": "^13.4.10",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "remark": "^14.0.2",
-    "remark-html": "^15.0.1",
-    "sass": "^1.64.2"
+    "gray-matter": "^4.0.3"
   },
   "devDependencies": {
-    "@types/eslint": "^8.44.0",
-    "@types/node": "^18.16.19",
-    "@types/react": "18.2.15",
-    "@types/react-dom": "18.2.7",
-    "eslint": "^8.45.0",
-    "eslint-config-next": "13.4.10",
-    "typescript": "^5.1.6"
+    "@11ty/eleventy": "^2.0.1",
+    "eleventy-sass": "^2.2.6"
   }
 }

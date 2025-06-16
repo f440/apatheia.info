@@ -1,0 +1,34 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
+  <url>
+    <loc>https://apatheia.info/</loc>
+    <lastmod>{% if collections.posts[0] %}{{ collections.posts[0].data.created_at | rssDate }}{% else %}{{ "now" | rssDate }}{% endif %}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Blog posts -->
+  {% for post in collections.posts %}
+  <url>
+    <loc>https://apatheia.info{{ post.url }}</loc>
+    <lastmod>{{ post.data.updated_at | default: post.data.created_at | rssDate }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  {% endfor %}
+
+  <!-- Category pages -->
+  {% for tag in collections.tagList %}
+  <url>
+    <loc>https://apatheia.info/blog/categories/{{ tag }}/</loc>
+    <lastmod>{% assign tagPosts = collections.posts | filterByTag: tag %}{% if tagPosts[0] %}{{ tagPosts[0].data.created_at | rssDate }}{% else %}{{ "now" | rssDate }}{% endif %}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  {% endfor %}
+</urlset>

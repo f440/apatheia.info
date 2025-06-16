@@ -1,0 +1,8 @@
+{% if tags %}
+  {% for tag in tags %}
+    <span>
+      <a href="/blog/categories/{{ tag | url_encode }}/">{{ tag }}</a>
+      {% unless forloop.last %} {% endunless %}
+    </span>
+  {% endfor %}
+{% endif %}

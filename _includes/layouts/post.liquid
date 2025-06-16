@@ -1,0 +1,13 @@
+---
+layout: layouts/base.liquid
+---
+
+<article>
+  <h1>{{ title }}</h1>
+  <p id="article-info">
+    {{ created_at | dateFormat: "yyyy.MM.dd" }}
+    {% include "partials/tags.liquid", tags: tags %}
+  </p>
+
+  {{ content }}
+</article>

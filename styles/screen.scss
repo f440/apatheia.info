@@ -54,19 +54,32 @@ header, article, footer {
 pre, code {
   color: $base-color;
   font-family: ui-monospace, monospace;
-  overflow: scroll;
 }
 
 code {
   background-color: $base-code-background-color;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+pre {
+  background-color: $base-code-background-color;
+  border: solid 1px $base-border-color;
+  border-radius: 3px;
+  padding: 1em;
+  overflow-x: auto;
+  font-size: 0.9em;
+  margin: 1em 0;
 }
 
 pre code {
-  border: solid 1px $base-border-color;
-  display: block;
-  font-size: .9em;
-  padding: 1em;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
 }
+
 
 img {
   border: 0;

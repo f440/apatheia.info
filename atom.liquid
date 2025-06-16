@@ -1,0 +1,28 @@
+---
+permalink: /atom.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="https://apatheia.info/">
+  <id>https://apatheia.info/</id>
+  <title>apatheia.info</title>
+  <updated>{% if collections.posts[0] %}{{ collections.posts[0].data.updated_at | default: collections.posts[0].data.created_at | rssDate }}{% else %}{{ "now" | rssDate }}{% endif %}</updated>
+  <link rel="self" href="https://apatheia.info/atom.xml"/>
+  <author>
+    <name>f440</name>
+    <uri>https://apatheia.info/</uri>
+  </author>
+  
+  {% for post in collections.posts limit: 10 %}
+  <entry>
+    <id>tag:apatheia.info,{{ post.data.created_at | date: "%Y-%m-%d" }}:{{ post.data.permalink }}</id>
+    <title type="text">{{ post.data.title | escape }}</title>
+    <published>{{ post.data.created_at | rssDate }}</published>
+    <updated>{{ post.data.updated_at | default: post.data.created_at | rssDate }}</updated>
+    <link href="https://apatheia.info{{ post.data.permalink }}"/>
+    <content type="html">
+      <![CDATA[{{ post.templateContent }}]]>
+    </content>
+  </entry>
+  {% endfor %}
+</feed>

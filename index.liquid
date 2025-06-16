@@ -1,0 +1,16 @@
+---
+layout: layouts/base.liquid
+title: ""
+---
+
+<article>
+  {% for post in collections.posts %}
+  <section>
+    <h2>
+      <a href="{{ post.data.permalink }}">{{ post.data.title }}</a>
+    </h2>
+    <span>{{ post.data.created_at | dateFormat: "yyyy.MM.dd" }}</span>
+    {% include "partials/tags.liquid", tags: post.data.tags %}
+  </section>
+  {% endfor %}
+</article>

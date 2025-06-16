@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if title %}{{ title }} - {% endif %}apatheia.info</title>
+  <link rel="stylesheet" href="/styles/screen.css">
+  <link rel="alternate" type="application/rss+xml" title="apatheia.info" href="/atom.xml">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+</head>
+<body>
+  <header>
+    <h1 id="site-title">
+      <a href="/">apatheia.info</a>
+    </h1>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer>
+    <ul>
+      <li>Link:</li>
+      <li>
+        <a href="https://twitter.com/f440">Twitter</a>
+      </li>
+      <li>
+        <a href="https://github.com/f440">Github</a>
+      </li>
+      <li>
+        <a href="https://pinbaord.in/u:f440">Pinbaord</a>
+      </li>
+    </ul>
+  </footer>
+  
+</body>
+</html>
