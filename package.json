@@ -12,7 +12,7 @@
     "new-post": "node ./lib/new-post.js"
   },
   "dependencies": {
-    "date-fns": "^2.30.0",
+    "date-fns": "^4.1.0",
     "gray-matter": "^4.0.3"
   },
   "devDependencies": {
